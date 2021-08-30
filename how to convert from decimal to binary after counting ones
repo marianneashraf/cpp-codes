@@ -1,0 +1,161 @@
+#include<iostream>
+#define _CRT_SECURE_NO_WARNINGS
+//#include <bits/stdc++.h>
+#include <stdio.h>
+#include<string> 
+#include <cstdio>
+#include <set> //::iterator s.begin() s.end() s.erase() size() empty() clear()
+#include <stack>
+#include <vector>
+#include <algorithm> 
+#include<cmath> 
+#include <queue>
+#include<cassert> 
+#include<cstdlib> //rand s
+#include<cctype> //islower, isupper, tolower ,toupper 
+#include<iomanip> //setprecision setw setfill 
+#include<fstream> 
+#include<ostream> 
+#define PI 3.14159265
+#define ull unsigned long long
+#define ill int long long
+#define in scanf("%d",&n)
+#define inn scanf("%d%d",&n,&x)
+#define innn scanf("%d%d%d",&n,&x,&y)
+#define lin scanf("%lld",&n)
+#define linn scanf("%lld%lld",&n,&x)
+#define linnn scanf("%lld%lld%lld",&n,&x,&y)
+#define din scanf("%lf",&n)
+#define dinnn scanf("%lf%lf%lf",&n,&x,&y)
+#define dinn scanf("%lf%lf",&n,&x)
+#define chin scanf("%c",&s)
+#define ll long long
+#define el << "\n"
+#define cel cout << "\n"
+const ll maxn = 1e5 + 10;
+const int MOD = 1e9 + 7;
+ll count[maxn];
+ll a[maxn];
+ll b[maxn];
+char str[maxn];
+const int n = 55;
+char s[n][n];
+#define fastIO() ios_base::sync_with_stdio(false); cin.tie(NULL);
+using namespace std;
+int range_sum(int s, int k, vector<int>& cum_sum) //zero based
+{
+    if (s == 0)
+        return cum_sum[k];
+    return cum_sum[k] - cum_sum[s - 1];
+}
+int range_sum1(int s, int k, vector<int>& cum_sum) //one based (let arr[0]=0)
+{
+    return cum_sum[k] - cum_sum[s - 1];
+}
+int fib(int n)
+{
+    if (n <= 1)
+        return n;
+
+    return fib(n - 1) + fib(n - 2);
+}
+int gcdd(int a, int b) //__gcd(m,n)
+{
+    if (b == 0)
+        return a;
+    return gcdd(b, a % b);
+}
+int factorial(int n)
+{
+    int res = 1;
+    for (int i = 2; i <= n; i++)
+        res *= i;
+
+    return res;
+}
+int factoriall(int n) // recursive function
+{
+    if (n == 1) // base case
+        return 1;
+
+    return factoriall(n - 1) * n;
+}
+void print_triangle(int levels) // ma2lob
+{
+    if (levels == 0)
+        return;
+
+    for (int i = 0; i < levels; ++i)
+        cout << "*";
+    cout << "\n";
+
+    print_triangle(levels - 1);
+}
+void print_trianglee(int levels) // m3dol
+{
+    if (levels == 0)
+        return;
+
+    print_trianglee(levels - 1);
+
+    for (int i = 0; i < levels; ++i)
+        cout << "*";
+    cout << "\n";
+}
+void print_3n_plus_1(int n)
+{
+    cout << n << " ";
+    if (n == 1)
+        return;
+
+    if (n % 2 == 0)
+        print_3n_plus_1(n / 2);
+    else
+        print_3n_plus_1(3 * n + 1);
+}
+ll gcd(ll a, ll b)
+{
+    while (b != 0)
+    {
+        ll a2 = a;
+        a = b;
+        b = a2 % b;
+    }
+    return a;
+}
+ll lcm(ll a, ll b)
+{
+    return a / gcd(a, b) * b;
+}
+#include <iostream>
+#include<cmath>
+#include<algorithm>
+#include <vector>
+#define el <<"\n"
+#define cel cout<<"\n"
+using namespace std;
+int main()
+{
+  int t;
+  cin>>t;
+  while(t--)
+  {
+      int count=0;
+    int n;
+      cin>>n;
+      while(n!=0)
+      {
+          int digit=n%2;
+         if(digit==1)
+            count++;
+          n/=2;
+      }
+       int dec=0 , power=0;
+     while(count--)
+     {
+         dec+=1*pow(2,power);
+         power++;
+     }
+     cout<< dec el;
+  }
+}
